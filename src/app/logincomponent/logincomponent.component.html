@@ -1,0 +1,16 @@
+<p>logincomponent works!</p>
+<div class="form_container">
+  <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+    <header>Login</header>
+    <label>UserName <span>*</span></label>
+    <input type="text" name="uname" formControlName="uname" />
+
+    <div class="help">At least 6 Chracters</div>
+    <label>Password <span>*</span></label>
+    <input type="password" class="fortextbox" name="passwd" formControlName="passwd" />
+
+    <div class="help">User upper and lower case in passowrd</div>
+    <button [class]="formdata.valid ? 'colorClassGreen':'colorClassRed'" [disabled]='!formdata.valid'
+      value="Login">Login</button>
+  </form>
+</div>

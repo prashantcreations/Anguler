@@ -1,18 +1,34 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { HomeComponent } from './home/home.component';
+import { LogincomponentComponent } from './logincomponent/logincomponent.component';
+import { MyfirstComponentComponent } from './myfirst-component/myfirst-component.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { PrefixfornamePipe } from './prefixforname.pipe';
+import { RoutingComponent } from './routing/routing.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    MyfirstComponentComponent,
+    LogincomponentComponent,
+    HomeComponent,
+    PagenotfoundComponent,
+    RoutingComponent,
+    EmployeeComponent,
+    PrefixfornamePipe,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [EmployeeComponent]
 })
 export class AppModule { }

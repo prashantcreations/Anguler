@@ -1,0 +1,27 @@
+<p>employee works!</p>
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Annual Salary</th>
+      <th>Date of Birth</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let employee of employeeList'>
+      <td>{{employee.code | uppercase}}</td>
+      <td>{{employee.name |prefixforname:employee.gender }}</td>
+      <td>{{employee.gender }}</td>
+      <td>{{employee.annualSalary }}</td>
+      <td>{{employee.dateOfBirth | date: 'fullDate' | uppercase}}</td>
+    </tr>
+    <tr *ngIf="!employeeList || employeeList.length===0">
+      <td>
+        No Employee List to Display
+      </td>
+
+    </tr>
+  </tbody>
+</table>
